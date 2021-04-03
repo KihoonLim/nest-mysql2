@@ -8,7 +8,7 @@
 ## Install
 
 ```markdown
-$ npm i nest-mysql2
+$ npm i nest-mysql2 mysql2
 ```
 
 ---
