@@ -45,7 +45,7 @@ export class MysqlService {
     return await conn.rollback();
   }
 
-  async relese(conn: any): Promise<any> {
-    return await conn.relese();
+  async release(conn: any): Promise<any> {
+    conn.release();
   }
 }

@@ -1,5 +1,4 @@
 # nest-mysql2
-
 ## **Description**
 
 [Mysql2](https://github.com/sidorares/node-mysql2) module for **[Nest](https://github.com/nestjs/nest)**
@@ -55,7 +54,7 @@ const conn = await this.db.getConnection();
       await this.db.execute({
         conn,
         sql: `select * from mem where id = ?`,
-        value: 1,
+        value: [1],
       });
 
       await this.db.query({
@@ -66,7 +65,7 @@ const conn = await this.db.getConnection();
 
       await this.db.commit(conn);
     } catch (err) {
-			console.log(err
+			console.log(err)
       await this.db.rollback(conn);
     } finally {
       this.db.relese(conn);
@@ -75,9 +74,11 @@ const conn = await this.db.getConnection();
 }
 ```
 
+You can use it according to the grammar of the mysql module.
+
 **In connection information, information of mysql module can be used directly without using the service.**
 
-ex) conn.beginTransaction(), conn.query('select 1')
+ex) conn.beginTransaction(), conn.query( sql, value )
 
 ---
 
