@@ -23,7 +23,7 @@ import { MysqlModule } from 'nest-mysql2';
 
 @Module({
   imports: [
-	MysqlModule.forRoot({
+    MysqlModule.forRoot({
       host: process.env.DB_HOST,
       user: process.env.DB_USER,
       password: process.env.DB_PASS,
